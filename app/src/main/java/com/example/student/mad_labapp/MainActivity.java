@@ -1,7 +1,8 @@
 package com.example.student.mad_labapp;
 
-import android.content.Intent;
+import android.graphics.Color;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.view.Menu;
 import android.view.MenuInflater;
@@ -9,10 +10,12 @@ import android.view.MenuItem;
 
 public class MainActivity extends AppCompatActivity {
 
+    ConstraintLayout cl;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        cl = findViewById(R.id.cl);
     }
 
     public boolean onCreateOptionsMenu(Menu menu) {
@@ -24,11 +27,14 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(MenuItem item) {
         // Handle item selection
         switch (item.getItemId()) {
-            case R.id.f1:
-                startActivity(new Intent(this, Main2Activity.class));
+            case R.id.red:
+                cl.setBackgroundColor(Color.RED);
                 return true;
-            case R.id.f2:
-                startActivity(new Intent(this, Main3Activity.class));
+            case R.id.green:
+                cl.setBackgroundColor(Color.GREEN);
+                return true;
+            case R.id.blue:
+                cl.setBackgroundColor(Color.BLUE);
                 return true;
             default:
                 return super.onOptionsItemSelected(item);
