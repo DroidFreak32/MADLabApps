@@ -1,25 +1,25 @@
 package com.example.student.mad_labapp;
 
 import android.content.ContentValues;
+import android.content.Intent;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.net.Uri;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
 
     SQLiteDatabase db;
     Button insert;
-    Button select;
+    Button call;
     EditText name, usn, phone;
     List<String> studentList;
     ArrayAdapter adapter;
@@ -30,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         db = new DBHelper(this).getWritableDatabase();
         insert = findViewById(R.id.insertButton);
-        select = findViewById(R.id.getValues);
+        call = findViewById(R.id.call);
         name = findViewById(R.id.name_input);
         usn = findViewById(R.id.usn_input);
         phone = findViewById(R.id.phone_input);
@@ -57,36 +57,32 @@ public class MainActivity extends AppCompatActivity {
             }
 
         });
-
-        select.setOnClickListener(new View.OnClickListener() {
+        call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                studentList = new ArrayList<>();
-                Cursor cursor = db.rawQuery("select * from student", null);
-                if (cursor.getCount() <= 0) {
-                    studentList.add("No values were present");
-
-                } else {
-                    for (int i = 0; i < cursor.getCount(); i++) {
+                String callUSN = usn.getText().toString();
+                if (callUSN.equals(""))
+                    Toast.makeText(getApplicationContext(), "Enter USN", Toast.LENGTH_SHORT).show();
+                else {
+                    Cursor cursor = db.rawQuery("select * from student where usn = '" + callUSN + "'", null);
+                    if (cursor.getCount() != 1)
+                        Toast.makeText(getApplicationContext(), "Student USN:" + callUSN + " not found!", Toast.LENGTH_SHORT).show();
+                    else {
                         cursor.moveToNext();
-                        String stud = "";
-                        stud += " Name : " + cursor.getString(0);
-                        stud += "\n USN : " + cursor.getString(1);
-                        stud += "\n Phone Number: " + cursor.getString(2);
-                        studentList.add(stud);
-
+                        String phNumber = cursor.getString(2);
+                        Intent intent = new Intent(Intent.ACTION_CALL);
+                        intent.setData(Uri.parse("tel:" + phNumber));
+                        try {
+                            startActivity(intent);
+                        } catch (Exception e) {
+                            Toast.makeText(getApplicationContext(), "Cannot call! " + phNumber, Toast.LENGTH_SHORT).show();
+                        }
                     }
-
                 }
-                cursor.close();
-                adapter = new ArrayAdapter<String>(
-                        getApplicationContext(), R.layout.student_list, studentList);
-                ListView listView = findViewById(R.id.studentList);
-                listView.setAdapter(adapter);
-
             }
-
         });
+
+
     }
 
 }
