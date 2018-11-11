@@ -20,3 +20,5 @@ Log.<level>(<tag>,<message>)
 ```
 Where `<level>` can be i,v,d,e,wtf (info,verbose,debug,warning,what_a_terrible_failure)
 
+[Main Java files](https://github.com/DroidFreak32/MADLabApps/tree/a02_log_lifecycle/app/src/main/java/com/example/student/mad_labapp)  
+[Main XML files](https://github.com/DroidFreak32/MADLabApps/tree/a02_log_lifecycle/app/src/main/res/layout)  
