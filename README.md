@@ -64,4 +64,5 @@ This mainly has textviews for heading, a DatePicker and a ListView widget
 
 ###  course_item.xml
 This contains the way EACH ITEM in the ListView is shown.  
-You don't need any layout. The root element is just a TextView
+You don't need any layout. The root element is just a TextView[Main Java files](https://github.com/DroidFreak32/MADLabApps/tree/a01_datepicker_listview/app/src/main/java/com/example/student/mad_labapp)  
+[Main XML files](https://github.com/DroidFreak32/MADLabApps/tree/a01_datepicker_listview/app/src/main/res/layout)  
