@@ -10,8 +10,12 @@
         android:id="@+id/Stop"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true"
-        android:text="Button" />
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:text="Stop" />
 
     <Button
         android:id="@+id/Play"
@@ -22,16 +26,23 @@
         android:layout_alignParentLeft="true"
         android:layout_marginStart="33dp"
         android:layout_marginLeft="33dp"
-        android:text="Button" />
+        android:text="Play" />
 
     <Button
         android:id="@+id/ChangeColor"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/Stop"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:layout_marginEnd="36dp"
-        android:layout_marginRight="36dp"
-        android:text="Button" />
+        android:layout_alignParentTop="true"
+        android:layout_alignParentBottom="true"
+        android:layout_marginStart="13dp"
+        android:layout_marginLeft="13dp"
+        android:layout_marginTop="232dp"
+        android:layout_marginEnd="17dp"
+        android:layout_marginRight="17dp"
+        android:layout_marginBottom="231dp"
+        android:layout_toStartOf="@+id/Stop"
+        android:layout_toLeftOf="@+id/Stop"
+        android:layout_toEndOf="@+id/Play"
+        android:layout_toRightOf="@+id/Play"
+        android:text="Change Color" />
 </RelativeLayout>
