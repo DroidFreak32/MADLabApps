@@ -1,5 +1,6 @@
 # MAD Lab apps
 
+ ### List of programs (Each link is a branch in this repo).
 | Q No. | Part A        										| Part B  														|
 |:-----:|:-----------------------------------------------------:|:-------------------------------------------------------------:|
 |   1   | [Datepicker Listview][a01_datepicker_listview]        | [Asynctask Progressbar][b01_asynctask_progressbar]            |
@@ -9,7 +10,7 @@
 |   5   | [Webview][a05_webview]                                | [Student Database Call][b05_student_database_call]            |
 |   6   | [Shared Preference][a06_shared_preference]            | [Resume App][b06_resume]                                      |
 |   7   | [Menu Activity Switcher][a07_menu_activity_switcher]  | [Email Intent][b07_email_intent]                              |
-|   8   | [Menu Bgcolor Change][a08_menu_bgcolor_change]        | [Menu Bgcolor Change][b08_alert_dialogue]                     |
+|   8   | [Menu Bgcolor Change][a08_menu_bgcolor_change]        | [Alert Dialog][b08_alert_dialog]                       |
 |   9   | [Sms Intent App][a09_sms_intent_app]                  | N/A                                                           |
 |   10  | [Call Intent][a10_call_intent]                        | N/A                                                           |
 
@@ -30,4 +31,6 @@
 [b05_student_database_call]: https://github.com/DroidFreak32/MADLabApps/tree/b05_student_database_call
 [b06_resume]: https://github.com/DroidFreak32/MADLabApps/tree/b06_resume
 [b07_email_intent]: https://github.com/DroidFreak32/MADLabApps/tree/b07_email_intent
-[b08_alert_dialogue]: https://github.com/DroidFreak32/MADLabApps/tree/b08_alert_dialogue
+[b08_alert_dialog]: https://github.com/DroidFreak32/MADLabApps/tree/b08_alert_dialog
+
+All programs are tested and working on Android Studio 3.2.1, as of November 12, 2018
