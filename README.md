@@ -34,3 +34,5 @@
 [b08_alert_dialog]: https://github.com/DroidFreak32/MADLabApps/tree/b08_alert_dialog
 
 All programs are tested and working on Android Studio 3.2.1, as of November 12, 2018
+
+### Make sure you update everything in android studio to the latest version so you don't face dependency hell.
