@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
+
 
     <EditText
         android:id="@+id/name"
@@ -11,18 +13,17 @@
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="26dp"
         android:ems="10"
-        android:hint="Name"
-        android:inputType="textPersonName" />
+        android:inputType="textPersonName"
+        android:text="Name" />
 
     <RadioGroup
         android:id="@+id/gender"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="97dp"
         android:orientation="horizontal">
 
         <RadioButton
@@ -51,21 +52,21 @@
         android:id="@+id/qual"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentLeft="true"
         android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="150dp"
+        android:layout_marginStart="159dp"
+        android:layout_marginLeft="159dp"
+        android:layout_marginTop="107dp"
         android:text="Qualification:" />
 
     <CheckBox
         android:id="@+id/qual10"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="25dp"
-        android:layout_marginLeft="25dp"
-        android:layout_marginBottom="295dp"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="141dp"
+        android:layout_toStartOf="@+id/name"
         android:text="10th" />
 
     <CheckBox
@@ -81,40 +82,38 @@
         android:id="@+id/qualBE"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/qual10"
+        android:layout_alignBottom="@+id/qual10"
         android:layout_alignParentEnd="true"
         android:layout_alignParentRight="true"
-        android:layout_marginTop="0dp"
-        android:layout_marginEnd="21dp"
-        android:layout_marginRight="21dp"
+        android:layout_marginEnd="25dp"
+        android:layout_marginRight="25dp"
+        android:layout_marginBottom="0dp"
         android:text="BE" />
 
     <EditText
-        android:id="@+id/editText3"
-        android:layout_width="383dp"
+        android:id="@+id/address"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_alignStart="@+id/name"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="-84dp"
-        android:layout_marginBottom="235dp"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="209dp"
         android:ems="10"
         android:hint="Enter Address"
         android:inputType="textPersonName" />
-
-    <ListView
-        android:layout_width="match_parent"
-        android:layout_height="188dp"
-        android:layout_alignParentStart="true"
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="0dp"
-        android:layout_marginBottom="0dp" />
 
     <Button
         android:id="@+id/button"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/_dynamic"
-        android:layout_alignEnd="@+id/qual"
-        android:text="Done" />
+        android:layout_below="@+id/address"
+        android:layout_centerHorizontal="true"
+        android:text="DONE" />
+
+    <ListView
+        android:id="@+id/resumeList"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/button"
+        android:layout_centerHorizontal="true" />
 
 </RelativeLayout>
