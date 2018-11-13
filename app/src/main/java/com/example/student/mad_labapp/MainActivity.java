@@ -11,6 +11,8 @@ import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.RadioGroup;
 
+import java.util.ArrayList;
+
 public class MainActivity extends AppCompatActivity {
 
     Button button;
@@ -19,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
     CheckBox qual10, qual12, qualBE;
     EditText name, address;
     String qualifications;
-    String[] resumeDetails;
+    String resumeDetails;
+    ArrayList<String> person;
     ArrayAdapter adapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,20 +35,20 @@ public class MainActivity extends AppCompatActivity {
         qual12 = findViewById(R.id.qual12);
         qualBE = findViewById(R.id.qualBE);
         button = findViewById(R.id.button);
-
+        person = new ArrayList<>();
         button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                resumeDetails = new String[4]; // Name, Gender, Qual & Addr
-                resumeDetails[0] = "Name: " + name.getText().toString();
+//                resumeDetails = new String[4]; // Name, Gender, Qual & Addr
+                resumeDetails = "Name: " + name.getText().toString();
                 int selectedGenderID = genderGroup.getCheckedRadioButtonId();
                 selectedGender = findViewById(selectedGenderID);
-                resumeDetails[1] = "Gender: " + selectedGender.getText().toString();
+                resumeDetails += "\nGender: " + selectedGender.getText().toString();
                 qualifications = getQualification();
-                resumeDetails[2] = qualifications;
-                resumeDetails[3] = "Address:\n" + address.getText().toString();
-
-                adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.resume_list, resumeDetails);
+                resumeDetails += qualifications;
+                resumeDetails += "\nAddress:\n" + address.getText().toString();
+                person.add(resumeDetails);
+                adapter = new ArrayAdapter<String>(MainActivity.this, R.layout.resume_list, person);
                 ListView resumeList = findViewById(R.id.resumeList);
                 resumeList.setAdapter(adapter);
 
@@ -55,7 +58,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private String getQualification() {
-        String temp = "Qualifications are:";
+        String temp = "\nQualifications are:";
         if (qual10.isChecked())
             temp += " 10th";
         if (qual12.isChecked())
