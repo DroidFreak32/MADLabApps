@@ -28,7 +28,9 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        db = new DBHelper(this).getWritableDatabase();
+//        db = new DBHelper(this).getWritableDatabase();
+        db = openOrCreateDatabase("studentDB", MODE_PRIVATE, null);
+        db.execSQL("create table if not exists student ( name, usn primary key, phone )");
         insert = findViewById(R.id.insertButton);
         select = findViewById(R.id.getValues);
         name = findViewById(R.id.name_input);
