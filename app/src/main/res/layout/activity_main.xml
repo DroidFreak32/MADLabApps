@@ -25,7 +25,8 @@
         android:id="@+id/phone_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Enter Phone Number" />
+        android:hint="Enter Phone Number"
+        android:inputType="phone" />
 
     <Button
         android:id="@+id/insertButton"
