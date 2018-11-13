@@ -25,6 +25,7 @@
         android:id="@+id/phone_input"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:inputType="phone"
         android:hint="Enter Phone Number" />
 
     <Button
@@ -37,7 +38,7 @@
         android:id="@+id/call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Get Values in database" />
+        android:text="CALL USN" />
 
     <TextView
         android:layout_width="wrap_content"
