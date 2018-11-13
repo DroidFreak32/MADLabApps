@@ -20,7 +20,7 @@ public class MainActivity extends AppCompatActivity {
     SQLiteDatabase db;
     Button insert;
     Button call;
-    EditText name, usn, phone;
+    EditText name, usn, phone, callUSN_et;
     List<String> studentList;
     ArrayAdapter adapter;
 
@@ -35,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         call = findViewById(R.id.call);
         name = findViewById(R.id.name_input);
         usn = findViewById(R.id.usn_input);
+        callUSN_et = findViewById(R.id.callUSN);
         phone = findViewById(R.id.phone_input);
 
         insert.setOnClickListener(new View.OnClickListener() {
@@ -62,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         call.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String callUSN = usn.getText().toString();
+                String callUSN = callUSN_et.getText().toString();
                 if (callUSN.equals(""))
                     Toast.makeText(getApplicationContext(), "Enter USN", Toast.LENGTH_SHORT).show();
                 else {

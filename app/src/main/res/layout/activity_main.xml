@@ -34,17 +34,18 @@
         android:layout_height="wrap_content"
         android:text="Insert" />
 
+    <EditText
+        android:id="@+id/callUSN"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter USN to call" />
+
     <Button
         android:id="@+id/call"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="CALL USN" />
-
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Values in The DataBase"
-        android:textSize="20dp" />
 
 
 </LinearLayout>
